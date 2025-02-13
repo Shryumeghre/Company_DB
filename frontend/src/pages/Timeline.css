@@ -1,0 +1,175 @@
+/* body {
+    background-color: rgb(174, 170, 170);
+} */
+/* Navbar Styling (Reduced Size) */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: orange;
+    padding: 0.5rem 0;  /* Reduced padding */
+    background-color: grey;
+    max-width: 80%;  /* Reduce width */
+    margin: auto;  /* Center it */
+}
+
+/* Navbar Links (Smaller Font) */
+.navbar a {
+    font-size: 16px;  /* Reduced from 18px */
+    padding: 6px 12px; /* Reduced padding */
+    color: orange;
+}
+
+/* Timeline Header (Smaller) */
+.timeline-header {
+    font-size: 24px;  /* Reduced from 32px */
+    margin: 10px 0;  /* Less spacing */
+}
+
+/* Company Dashboard Header (Smaller) */
+.company-dashboard {
+    font-size: 24px;  /* Reduce font size */
+    padding: 10px 0;  /* Reduce padding */
+}
+
+/* Reduce Page Container Width */
+.page-container {
+    width: 80%;  /* Reduced from 90% */
+    padding: 15px;  /* Reduced padding */
+}
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background: #222;
+    padding: 1rem 0;
+    /* border-radius: 10px; */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: grey;
+  border-radius: 8px;
+    /* transition: 0.3s; */
+}
+
+.navbar a:hover {
+    color: orange;
+}
+
+/* Timeline Header */
+.timeline-header {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Timeline Structure */
+.timeline {
+    
+
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #0033cc;
+    transform: translateX(-50%);
+}
+
+/* Timeline Item Styling */
+.timeline-item {
+    width: 45%;
+    background: orange;
+    border-radius: 12px;
+    padding: 15px;  /* Slightly reduced padding */
+    position: relative;
+    margin: 5px auto;  /* Reduced margin for tighter spacing */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: 0.3s;
+}
+
+/* Reduce the horizontal gap even further */
+.timeline-item:nth-child(odd) {
+    left: -30%; /* Reduced from -50% */
+}
+
+.timeline-item:nth-child(even) {
+    left: 30%; /* Reduced from 50% */
+}
+
+/* Reduce vertical gap between timeline items */
+.timeline {
+    padding: 5px 0; /* Reduced further */
+}
+
+/* Reduce space between items */
+.timeline-item + .timeline-item {
+    margin-top: 5px; /* Previously 10px, reduced */
+}
+
+
+/* Connectors (Icons) */
+.timeline-item::after {
+    content: '\1F4BC'; /* Briefcase icon */
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    font-size: 24px;
+    background: white;
+    padding: 8px;
+    border-radius: 50%;
+    border: 3px solid #0033cc;
+}
+
+h3 {
+    color: blue;
+}
+
+/* Company Name Styling */
+.company a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Date Section */
+.date {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* View All Button */
+.view-all {
+    background: #3300ff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.view-all:hover {
+    background: #1100aa;
+}
