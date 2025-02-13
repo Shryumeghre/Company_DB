@@ -23,7 +23,7 @@ public class ExcelToMySQL {
             connection = DatabaseUtil.getConnection();
             fis = new FileInputStream(new File(excelFilePath));
             workbook = new XSSFWorkbook(fis);
-            System.out.println("✅ Connected to the database successfully!");
+            System.out.println("Connected to the database successfully!");
 
             Sheet sheet = workbook.getSheetAt(0);
             Map<Integer, String> categoryMap = new HashMap<>();
@@ -68,7 +68,7 @@ public class ExcelToMySQL {
                         String lastUpdated = getDateCellValue(row.getCell(14), excelDateFormat);
 
                         if (categoryId == 0 || categoryName.isEmpty()) {
-                            System.out.println("⚠️ Skipping row " + row.getRowNum() + " due to missing category data.");
+                            System.out.println("Skipping row " + row.getRowNum() + " due to missing category data.");
                             continue;
                         }
 
@@ -77,7 +77,7 @@ public class ExcelToMySQL {
                             categoryStmt.setString(2, categoryName);
                             categoryStmt.addBatch();
                             categoryMap.put(categoryId, categoryName);
-                            System.out.println("✅ Inserted into category: " + categoryId + " - " + categoryName);
+                            System.out.println("Inserted into category: " + categoryId + " - " + categoryName);
                         }
 
                         if (!productMap.containsKey(productId)) {
@@ -87,7 +87,7 @@ public class ExcelToMySQL {
                             productStmt.setDouble(4, price);
                             productStmt.addBatch();
                             productMap.put(productId, categoryId);
-                            System.out.println("✅ Inserted into product: " + productId + " (Category: " + categoryId + ")");
+                            System.out.println("Inserted into product: " + productId + " (Category: " + categoryId + ")");
                         }
 
                         transactionStmt.setString(1, txid);
@@ -102,7 +102,7 @@ public class ExcelToMySQL {
 
                         rowCount++;
                     } catch (Exception rowError) {
-                        System.out.println("⚠️ Skipping row " + row.getRowNum() + " due to error: " + rowError.getMessage());
+                        System.out.println("Skipping row " + row.getRowNum() + " due to error: " + rowError.getMessage());
                     }
                 }
 
@@ -111,12 +111,12 @@ public class ExcelToMySQL {
                 transactionStmt.executeBatch();
                 connection.commit();
 
-                System.out.println("✅ Data Import Complete! " + rowCount + " rows inserted.");
+                System.out.println("Data Import Complete! " + rowCount + " rows inserted.");
             }
         } catch (SQLException sqlException) {
-            System.out.println("❌ Database Error: " + sqlException.getMessage());
+            System.out.println("Database Error: " + sqlException.getMessage());
         } catch (Exception e) {
-            System.out.println("❌ Unexpected Error: " + e.getMessage());
+            System.out.println("Unexpected Error: " + e.getMessage());
         } finally {
             closeResources(workbook, fis, connection);
         }
