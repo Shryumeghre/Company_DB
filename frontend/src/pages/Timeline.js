@@ -17,7 +17,6 @@ const Timeline = () => {
 
             {/* Timeline Container */}
             <div className="timeline-container">
-                {/* <h2 className="timeline-header">📌 Experience</h2> */}
                 
                 <div className="timeline">
                     <div className="timeline-item" onClick={() => navigate('/products')}>
@@ -35,8 +34,6 @@ const Timeline = () => {
                         <p className="company">These table contains TransactionID, ProductID, Store, Sales, Commission, Status, Added at, Last updated.</p>
                     </div>
                 </div>
-
-                {/* <button className="view-all" onClick={() => navigate('/')}>View All ➜</button> */}
             </div>
         </div>
     );
